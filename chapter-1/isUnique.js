@@ -16,8 +16,9 @@
 // console.log(isUnique('hello')) // should return false
 // console.log(isUnique('sup')) // should return false
 
-// Solution
+// Solutions
 /**
+  Keep track of seen characters with a Set data structure, fail when a repeated character is found.
   Time: O(N)
   Additional space: O(N)
   @param  {string[]} str: String to check, passed in as a character array
@@ -29,11 +30,16 @@ function hasUniqueCharactersSet(str) {
   let chars = new Set();
 
   for (let i = 0; i < str.length; ++i) {
+    // first thing the for loop does is check to see if there is a duplicate character in the Set. If there is it immediately returns false
+
     if (chars.has(str[i])) {
       return false;
     }
     chars.add(str[i]);
+    // If the character does not exist, it adds it to the Set
+    console.log(chars)
   }
+  // returns true if all unique characters
   return true;
 }
 
@@ -41,16 +47,13 @@ console.log(hasUniqueCharactersSet('hello'))
 console.log(hasUniqueCharactersSet('sup'))
 
 /**
- * Sort the original string first then iterate through it. Repeat characters
- * will show up next to eachother so fail if any two characters in a row
- * are the same.
- *
- * Time: O(N lg N)
- * Additional space: O(1)
- *
- * @param  {string[]} str String to check, passed in as a character array
- * @return {boolean}      True if unique characters, otherwise false
+  Sort the original string first then iterate through it. Repeat characters will show up next to eachother so fail if any two characters in a row are the same.
+  Time: O(N lg N)
+  Additional space: O(1)
+  @param  {string[]} str: String to check, passed in as a character array
+  @return {boolean}: True if unique characters, otherwise false
  */
+
 function hasUniqueCharactersSort(str) {
   // sort string using quicksort
   str.sort();
