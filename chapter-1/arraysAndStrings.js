@@ -2,12 +2,13 @@
 
 function isUnique(str) {
   hash = {}
+
   str.split('').forEach(function(i) {
     hash[i] = (hash[i] || 0) + 1
   });
 
-  console.log(hash)
-
+  return hash
+  // So I am able to return a hash table with the key and values of each letter in the str. If they are all 1's then it is unique and if there are any greater than 1 then it is not unique.
 }
 
 console.log(isUnique('hello')) // should return false
