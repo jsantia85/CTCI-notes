@@ -56,12 +56,18 @@ console.log(hasUniqueCharactersSet('sup'))
 
 function hasUniqueCharactersSort(str) {
   // sort string using quicksort
-  str.sort();
+  let split = str.split('');
 
-  for (var i = 1; i < str.length; ++i) {
+  console.log(split)
+
+  for (let i = 1; i < str.length; ++i) {
     if (str[i] === str[i - 1]) {
+      console.log(str[i], str[i-1])
       return false;
     }
   }
   return true;
 }
+
+console.log(hasUniqueCharactersSort('hello'))
+console.log(hasUniqueCharactersSort('sup'))
