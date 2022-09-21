@@ -1,9 +1,13 @@
 // 1.1 Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
 
 function isUnique(str) {
-  console.log('check')
+  hash = {}
+  str.split('').forEach(function(i) {
+    hash[i] = (hash[i] || 0) + 1
+  });
 
-  
+  console.log(hash)
+
 }
 
 console.log(isUnique('hello')) // should return false
