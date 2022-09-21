@@ -1,19 +1,3 @@
-// 1.1 Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
-
-function isUnique(str) {
-  hash = {}
-
-  str.split('').forEach(function(i) {
-    hash[i] = (hash[i] || 0) + 1
-  });
-
-  return hash
-  // So I am able to return a hash table with the key and values of each letter in the str. If they are all 1's then it is unique and if there are any greater than 1 then it is not unique.
-}
-
-console.log(isUnique('hello')) // should return false
-console.log(isUnique('sup')) // should return false
-
 // 1.2 Check Permutation: Given two strings, write a method to decide if one is a permutation of the others. 
 
 
